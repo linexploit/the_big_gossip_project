@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Here, the Gossip 🤭</h1>
+<%= render @gossip %>
+
+<div>
+  <%= link_to "Comment", new_comment_path(@gossip), class: "btn btn-primary mb-3" %> |
+  <%= link_to "Edit this gossip", edit_gossip_path(@gossip), class: "btn btn-primary mb-3" %> |
+  <%= link_to "Back to gossips", gossips_path, class: "btn btn-primary mb-3"%>
+
+  <%= button_to "Destroy this gossip", @gossip, method: :delete, class: "btn btn-primary mb-3" %>
+</div>

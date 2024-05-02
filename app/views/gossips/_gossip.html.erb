@@ -1,0 +1,35 @@
+<div id="<%= dom_id gossip %>">
+  <p>
+    <strong>Title:</strong>
+    <%= gossip.title %>
+  </p>
+
+  <p>
+    <strong>Content:</strong>
+    <%= gossip.content %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= link_to @gossip.user.username, users_path(@gossip.user) %>
+  </p>
+
+  <p>
+    <strong>City:</strong>
+    <%= gossip.city.name %>
+  </p>
+
+  <p>
+    <strong>Date:</strong>
+    <%= gossip.user.created_at %>
+  </p>
+
+  <p>
+    <strong>Comments:</strong>
+   <% Comment.all.each do |comment| %>
+    <%= comment.content %><br>
+  <% end %>
+  </p>
+</div>
+
+

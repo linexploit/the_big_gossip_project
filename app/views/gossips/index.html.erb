@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>All Gossips</h1>
+
+<%= link_to "CREATE A NEW GOSSIP !!!", new_gossip_path, class:"btn btn-outline-dark mb-5" %>
+
+<div id="gossips" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 g-4">
+  <% @gossips.each do |gossip| %>
+    <div class="col">
+      <div class="card bg-light mb-3" style="max-width: 18rem;">
+        <div class="card-header">
+          <%= gossip.user.username %>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= gossip.title %></h5>
+          <%= link_to "Show this gossip", gossip, class:"btn btn-secondary btn-lg btn-sm" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

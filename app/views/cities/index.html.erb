@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Gossip by City</h1>
+
+<div id="cities" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 g-4">
+  <% @cities.each do |city| %>
+    <div class="col">
+      <%= render city %>
+      <p>
+        <%= link_to "Show the gossips of this city", city %>
+      </p>
+    </div>
+  <% end %>
+</div>

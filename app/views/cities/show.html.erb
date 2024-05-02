@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @city %>
+
+  <p>
+    <strong>Gossips:</strong>
+    <ul>
+      <% @city.gossips.each do |gossip| %>
+        <li><%= gossip.title %> - <%= gossip.user.username %></li>
+      <% end %>
+    </ul>
+  </p>
