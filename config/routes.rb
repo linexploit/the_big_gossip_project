@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   get 'contact', to: 'contact#contact'
   get 'team', to: 'team#team'
 
+
   resources :gossips do
     resources :comments
   end
   resources :users
+  resources :sessions
   resources :cities
 
 

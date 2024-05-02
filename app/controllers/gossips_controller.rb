@@ -22,6 +22,7 @@ class GossipsController < ApplicationController
   # POST /gossips or /gossips.json
   def create
     @gossip = Gossip.new(gossip_params)
+    @gossip.user = User.find_by(id: session[:user_id])
 
     respond_to do |format|
       if @gossip.save
@@ -33,6 +34,7 @@ class GossipsController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /gossips/1 or /gossips/1.json
   def update

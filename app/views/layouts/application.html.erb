@@ -30,22 +30,19 @@
           <h3 class="masthead-brand mb-5">🤫 THE GOSSIP PROJECT 🤫</h3>
 
       <p class="lead">
-        <a href="#" class="btn btn-outline-primary">LOG IN</a>
-        <a href="#" class="btn btn-outline-primary">SIGN IN</a>
+        <%= link_to "SIGN IN", sessions_path(session.id), class:"btn btn-outline-primary", method: :post %>
+        <%= link_to "LOG IN", new_session_path, class:"btn btn-outline-primary", method: :get %>
       </p>
-
 
           <nav class="nav nav-masthead justify-content-center">
             <%= link_to "HOME", gossips_path, class:"btn btn-dark mr-2" %>
             <%= link_to "GOSSIPS BY CITY", cities_path, class:"btn btn-dark mr-2" %>
             <%= link_to "TEAM", team_path,class:"btn btn-dark mr-2" %>
             <%= link_to "CONTACT", contact_path, class:"btn btn-dark mr-2" %>
+            <%= link_to "Se déconnecter", session_path(session.id), method: :delete %>
           </nav>
         </div>
       </header>
-
-
-
     </div>
 
 
